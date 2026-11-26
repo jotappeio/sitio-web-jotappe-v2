@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>404 | Ups! Tenemos un problema. Estamos trabajando para solucionarlo - Jotappe.io</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f0f0f%22/><text y=%22.9em%22 font-size=%2280%22 font-family=%22sans-serif%22 font-weight=%22900%22 x=%2250%22 text-anchor=%22middle%22 fill=%22%238fbc8f%22>J</text></svg>">
+    
+    <style>
+        /* RESET Y BASE (Igual al Home) */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { 
+            background: #080808; 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            color: white; 
+            height: 100vh; 
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* CONTENEDOR CENTRAL (Estilo unificado con el Home) */
+        .error-stage {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            max-width: 600px; /* Un poco más pequeño para error */
+            max-height: 500px;
+            background: #0f0f0f; 
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0,0,0,0.9);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* GRID DE FONDO (Sutil, sin imágenes para no distraer) */
+        .collage-bg-subtle {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+            opacity: 0.4;
+        }
+        
+        /* CAPA SUPERIOR (Overlay) */
+        .content-overlay {
+            z-index: 10;
+            position: relative;
+        }
+
+        /* TÍTULO GIGANTE */
+        h1 {
+            font-size: clamp(5rem, 15vw, 8rem);
+            margin: 0;
+            color: #8fbc8f; /* Verde Marca */
+            font-weight: 900;
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(143, 188, 143, 0.3);
+            letter-spacing: -2px;
+        }
+
+        /* SUBTÍTULO */
+        h2 {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 700;
+        }
+
+        /* DESCRIPCIÓN */
+        p {
+            color: #aaa;
+            font-size: 1rem;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* BOTÓN DE RETORNO (Estilo coherente) */
+        .btn-home {
+            display: inline-block;
+            padding: 15px 35px;
+            background: rgba(143, 188, 143, 0.15); /* Fondo sutil */
+            color: #8fbc8f;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 1px solid #8fbc8f;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(143, 188, 143, 0.25);
+            background: #8fbc8f;
+            color: #080808;
+        }
+
+        /* ANIMACIÓN DE RADAR (Detalle visual) */
+        .radar-container {
+            width: 80px; height: 80px;
+            margin: 0 auto 20px auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .radar-blip {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            border: 2px solid #8fbc8f;
+            opacity: 0;
+            animation: pulse 2s infinite ease-out;
+            position: absolute;
+        }
+        .radar-icon {
+            fill: #8fbc8f;
+            width: 40px; height: 40px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.5); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .error-stage { width: 95vw; height: 70vh; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-stage">
+        <div class="collage-bg-subtle"></div>
+
+        <div class="content-overlay">
+            <div class="radar-container">
+                <div class="radar-blip"></div>
+                <svg class="radar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                </svg>
+            </div>
+
+            <h1>404</h1>
+            <h2>Coordenadas Perdidas</h2>
+            <p>Te has desviado de la ruta establecida.<br>Iniciando protocolo de retorno al origen.</p>
+            
+            <a href="/" class="btn-home">Volver al Campo Base</a>
+        </div>
+    </div>
+
+    <script>
+        // Redirección automática de seguridad en 8 segundos
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 8000);
+    </script>
+
+</body>
+</html>

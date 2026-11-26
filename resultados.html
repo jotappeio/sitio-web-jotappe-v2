@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Resultados Oficiales | Campeonato Nacional Enduro Chile 2026</title>
+    
+    <!-- Meta tags SEO & Social Sharing -->
+    <meta name="description" content="Resultados oficiales 7ª y 8ª Fecha del Campeonato Nacional Enduro Chile FIM 2026 - Parque Las Palmas, Región de Valparaíso.">
+    <meta property="og:title" content="Resultados Oficiales - Campeonato Nacional Enduro Chile 2026">
+    <meta property="og:description" content="Tiempos parciales y posiciones de la 7ª y 8ª Fecha en Parque Las Palmas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jotappe.com/resultados">
+
+    <style>
+        :root { --accent: #8fbc8f; --bg: #050505; --card-bg: #111111; --text: #ffffff; --border: #222222; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        
+        body { 
+            background: var(--bg); 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            color: var(--text); 
+            min-height: 100vh; 
+            padding: 30px 15px;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        .header { text-align: center; margin-bottom: 30px; }
+        
+        /* LOGO OFICIAL */
+        .brand-logo-container {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-logo-img {
+            max-width: 160px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+            border-radius: 8px;
+        }
+
+        h1 { font-size: clamp(1.5rem, 4.2vw, 2.4rem); font-weight: 900; letter-spacing: -0.5px; text-transform: uppercase; margin-bottom: 6px; line-height: 1.1; }
+        .subtitle { color: var(--accent); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; }
+        .location-tag { color: #888; font-size: 0.75rem; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
+
+        .back-btn {
+            display: inline-block; margin-bottom: 20px; color: var(--accent); text-decoration: none;
+            font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #fff; }
+
+        /* BUSCADOR DINÁMICO GLOBAL */
+        .search-box {
+            position: relative;
+            max-width: 580px;
+            margin: 0 auto 25px auto;
+        }
+        .search-input {
+            width: 100%;
+            padding: 14px 20px 14px 46px;
+            background: #141414;
+            border: 1px solid #333;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 16px rgba(143, 188, 143, 0.35);
+            background: #181818;
+        }
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        /* SELECTOR DE FECHA (SÁBADO / DOMINGO) */
+        .fecha-selector {
+            display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;
+        }
+        .fecha-btn {
+            background: #161616; border: 1px solid #333; color: #ccc; padding: 10px 22px;
+            border-radius: 25px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;
+            cursor: pointer; transition: 0.3s;
+        }
+        .fecha-btn.active, .fecha-btn:hover {
+            background: var(--accent); color: #000; border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(143, 188, 143, 0.3);
+        }
+
+        /* NAVEGACIÓN POR CATEGORÍAS */
+        .tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 25px; border-bottom: 1px solid var(--border); justify-content: center; }
+        .tab-btn {
+            background: var(--card-bg); border: 1px solid var(--border); color: #aaa; padding: 9px 16px;
+            border-radius: 8px; font-weight: 800; font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase;
+            cursor: pointer; white-space: nowrap; transition: 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover { background: #222; color: var(--accent); border-color: var(--accent); }
+
+        /* CONTENIDO DE TABLAS */
+        .view-group { display: none; }
+        .view-group.active { display: block; }
+
+        .category-content { display: none; }
+        .category-content.active { display: block; }
+
+        .table-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 25px; }
+        .table-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #141414; }
+        .table-title { font-size: 0.95rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); }
+        .table-badge { font-size: 0.68rem; color: #777; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.82rem; }
+        th { background: #1a1a1a; padding: 11px 12px; color: #888; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 0.65rem; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        td { padding: 11px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); white-space: nowrap; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255,255,255,0.03); }
+
+        .pos-1 { color: var(--accent); font-weight: 900; }
+        .pos-2 { color: #e0e0e0; font-weight: 800; }
+        .pos-3 { color: #cd7f32; font-weight: 800; }
+        .total-time { font-weight: 900; color: #fff; background: rgba(143, 188, 143, 0.1); }
+        .sub-time { color: #888; font-size: 0.78rem; }
+
+        .badge-cat { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.68rem; font-weight: 800; background: #222; color: var(--accent); border: 1px solid #333; }
+        .badge-fecha { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.68rem; font-weight: 800; background: #1a1a1a; color: #ccc; border: 1px solid #333; }
+
+        #globalSearchResults { display: none; }
+
+        .no-results {
+            text-align: center;
+            padding: 35px;
+            color: #777;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer { text-align: center; margin-top: 40px; font-size: 0.65rem; color: #444; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; }
+
+        @media (max-width: 600px) {
+            body { padding: 15px 8px; }
+            th, td { padding: 8px 10px; font-size: 0.75rem; }
+            .fecha-btn { padding: 8px 14px; font-size: 0.72rem; }
+            .tabs { justify-content: flex-start; }
+            .main-logo-img { max-width: 130px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn">← Volver al Sitio</a>
+
+    <div class="header">
+        <div class="brand-logo-container">
+            <img src="assets/logo-enduro.png" alt="Campeonato Nacional Enduro Chile" class="main-logo-img">
+        </div>
+        <h1>Campeonato Nacional Enduro Chile</h1>
+        <p class="subtitle">7ª y 8ª Fecha // FIM 2026</p>
+        <p class="location-tag">Parque Las Palmas // 08 y 09 de Agosto — Región de Valparaíso</p>
+    </div>
+
+    <!-- BUSCADOR DINÁMICO GLOBAL -->
+    <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar por piloto, N° de moto, categoría o día..." oninput="filterPilotosGlobal()">
+    </div>
+
+    <!-- VISTA DE BÚSQUEDA GLOBAL -->
+    <div id="globalSearchResults">
+        <div class="table-card">
+            <div class="table-header">
+                <span class="table-title">Resultados de Búsqueda Global</span>
+                <span class="table-badge" id="searchCountBadge">0 coincidencias</span>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Categoría</th>
+                            <th>Pos.</th>
+                            <th>N°</th>
+                            <th>Nombre</th>
+                            <th>Vts. Tot.</th>
+                            <th>Vts R1</th><th>Tiempo R1</th>
+                            <th>Vts R2</th><th>Tiempo R2</th>
+                            <th>Vts R3</th><th>Tiempo R3</th>
+                            <th>Total Tiempo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="globalSearchResultsBody">
+                    </tbody>
+                </table>
+                <div class="no-results" id="noGlobalResults" style="display: none;">No se encontraron resultados para la búsqueda.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA NORMAL (TABS Y FECHAS) -->
+    <div id="normalTabsContainer">
+        <!-- SELECTOR DE FECHA -->
+        <div class="fecha-selector">
+            <button class="fecha-btn active" onclick="switchFecha('f7')">7ª Fecha (Sáb 08)</button>
+            <button class="fecha-btn" onclick="switchFecha('f8')">8ª Fecha (Dom 09)</button>
+        </div>
+
+        <!-- 7ª Fecha — Sábado 08 de Agosto 2026 -->
+        <div id="f7" class="view-group active">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchCat('f7', '50cc')">50 CC</button>
+                <button class="tab-btn" onclick="switchCat('f7', '65cc')">65 CC</button>
+                <button class="tab-btn" onclick="switchCat('f7', '85cc')">85 CC</button>
+                <button class="tab-btn" onclick="switchCat('f7', 'mujeres')">Mujeres Principiantes</button>
+            </div>
+
+            <!-- 50 CC -->
+            <div id="f7-50cc" class="category-content active">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">50 CC</span>
+                        <span class="table-badge">7ª Fecha — Sábado 08 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>17</td><td><strong>RENATO VASQUEZ</strong></td><td>8</td><td>3</td><td class="sub-time">16:06</td><td>3</td><td class="sub-time">14:18</td><td>2</td><td class="sub-time">8:52</td><td class="total-time">39:16.768</td></tr>
+                                <tr><td class="pos-2">2</td><td>115</td><td><strong>CLEMENTE DONOSO</strong></td><td>8</td><td>3</td><td class="sub-time">17:14</td><td>3</td><td class="sub-time">15:01</td><td>2</td><td class="sub-time">9:38</td><td class="total-time">41:53.253</td></tr>
+                                <tr><td class="pos-3">3</td><td>31</td><td><strong>BENJAMIN GALLARDO</strong></td><td>8</td><td>3</td><td class="sub-time">19:07</td><td>3</td><td class="sub-time">14:48</td><td>2</td><td class="sub-time">9:01</td><td class="total-time">42:56.943</td></tr>
+                                <tr><td>4</td><td>10</td><td><strong>SANTIAGO SEPULVEDA</strong></td><td>7</td><td>3</td><td class="sub-time">23:16</td><td>2</td><td class="sub-time">11:22</td><td>2</td><td class="sub-time">9:47</td><td class="total-time">44:25.314</td></tr>
+                                <tr><td>5</td><td>90</td><td><strong>SANTIAGO RODRIGUEZ</strong></td><td>6</td><td>1</td><td class="sub-time">13:56</td><td>3</td><td class="sub-time">18:26</td><td>2</td><td class="sub-time">11:52</td><td class="total-time">44:14.043</td></tr>
+                                <tr><td>6</td><td>41</td><td><strong>JOAQUIN CONEJERA</strong></td><td>3</td><td>2</td><td class="sub-time">25:43</td><td>1</td><td class="sub-time">6:31</td><td>—</td><td class="sub-time">—</td><td class="total-time">32:34.528</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 65 CC -->
+            <div id="f7-65cc" class="category-content">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">65 CC</span>
+                        <span class="table-badge">7ª Fecha — Sábado 08 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>21</td><td><strong>SANTIAGO ALONSO VÉLIZ</strong></td><td>11</td><td>4</td><td class="sub-time">19:26</td><td>4</td><td class="sub-time">20:18</td><td>3</td><td class="sub-time">14:28</td><td class="total-time">54:12.528</td></tr>
+                                <tr><td class="pos-2">2</td><td>11</td><td><strong>CLEMENTE LOBOS</strong></td><td>11</td><td>4</td><td class="sub-time">21:23</td><td>4</td><td class="sub-time">20:25</td><td>3</td><td class="sub-time">14:06</td><td class="total-time">55:54.138</td></tr>
+                                <tr><td class="pos-3">3</td><td>58</td><td><strong>JORGE VALDIVIA</strong></td><td>11</td><td>4</td><td class="sub-time">22:08</td><td>4</td><td class="sub-time">21:08</td><td>3</td><td class="sub-time">14:32</td><td class="total-time">57:48.425</td></tr>
+                                <tr><td>4</td><td>15</td><td><strong>MARTÍN CALVO</strong></td><td>11</td><td>4</td><td class="sub-time">21:09</td><td>4</td><td class="sub-time">22:00</td><td>3</td><td class="sub-time">16:48</td><td class="total-time">59:57.943</td></tr>
+                                <tr><td>5</td><td>22</td><td><strong>CLEMENTE BUSTO</strong></td><td>11</td><td>4</td><td class="sub-time">21:56</td><td>4</td><td class="sub-time">22:33</td><td>3</td><td class="sub-time">15:39</td><td class="total-time">01:00:08.154</td></tr>
+                                <tr><td>6</td><td>16</td><td><strong>JUAN CALVO</strong></td><td>11</td><td>4</td><td class="sub-time">24:56</td><td>4</td><td class="sub-time">26:07</td><td>3</td><td class="sub-time">16:35</td><td class="total-time">01:07:38.054</td></tr>
+                                <tr><td>7</td><td>103</td><td><strong>JOSÉ TOMÁS HERRERA</strong></td><td>11</td><td>4</td><td class="sub-time">26:00</td><td>4</td><td class="sub-time">24:39</td><td>3</td><td class="sub-time">17:50</td><td class="total-time">01:08:29.291</td></tr>
+                                <tr><td>8</td><td>213</td><td><strong>JUAN PEDRO DURAN</strong></td><td>11</td><td>4</td><td class="sub-time">25:56</td><td>4</td><td class="sub-time">27:24</td><td>3</td><td class="sub-time">17:17</td><td class="total-time">01:10:37.552</td></tr>
+                                <tr><td>9</td><td>146</td><td><strong>JOSE TOMAS MIRANDA</strong></td><td>8</td><td>3</td><td class="sub-time">25:02</td><td>3</td><td class="sub-time">28:17</td><td>2</td><td class="sub-time">13:23</td><td class="total-time">01:06:42.023</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 85 CC -->
+            <div id="f7-85cc" class="category-content">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">85 CC</span>
+                        <span class="table-badge">7ª Fecha — Sábado 08 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>131</td><td><strong>CRISTIAN OXA</strong></td><td>11</td><td>4</td><td class="sub-time">18:07</td><td>4</td><td class="sub-time">17:14</td><td>3</td><td class="sub-time">12:58</td><td class="total-time">48:19.028</td></tr>
+                                <tr><td class="pos-2">2</td><td>28</td><td><strong>WILLIAMS GONZALEZ</strong></td><td>11</td><td>4</td><td class="sub-time">17:55</td><td>4</td><td class="sub-time">17:38</td><td>3</td><td class="sub-time">12:52</td><td class="total-time">48:25.248</td></tr>
+                                <tr><td class="pos-3">3</td><td>341</td><td><strong>MARTÍN CASTRO</strong></td><td>11</td><td>4</td><td class="sub-time">18:23</td><td>4</td><td class="sub-time">17:55</td><td>3</td><td class="sub-time">12:43</td><td class="total-time">49:01.932</td></tr>
+                                <tr><td>4</td><td>202</td><td><strong>MARTIN CABRERA</strong></td><td>11</td><td>4</td><td class="sub-time">19:16</td><td>4</td><td class="sub-time">19:14</td><td>3</td><td class="sub-time">13:21</td><td class="total-time">51:51.142</td></tr>
+                                <tr><td>5</td><td>314</td><td><strong>EZEQUIEL GOMEZ</strong></td><td>11</td><td>4</td><td class="sub-time">19:49</td><td>4</td><td class="sub-time">18:55</td><td>3</td><td class="sub-time">13:14</td><td class="total-time">51:58.032</td></tr>
+                                <tr><td>6</td><td>125</td><td><strong>CRISTOBAL DONOSO</strong></td><td>11</td><td>4</td><td class="sub-time">18:53</td><td>4</td><td class="sub-time">20:38</td><td>3</td><td class="sub-time">13:16</td><td class="total-time">52:47.732</td></tr>
+                                <tr><td>7</td><td>128</td><td><strong>AGUSTÍN TORRES</strong></td><td>11</td><td>4</td><td class="sub-time">19:34</td><td>4</td><td class="sub-time">20:26</td><td>3</td><td class="sub-time">13:59</td><td class="total-time">53:59.221</td></tr>
+                                <tr><td>8</td><td>122</td><td><strong>VICENTE CORRALES</strong></td><td>10</td><td>4</td><td class="sub-time">20:13</td><td>3</td><td class="sub-time">20:19</td><td>3</td><td class="sub-time">14:18</td><td class="total-time">54:50.123</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mujeres Principiantes -->
+            <div id="f7-mujeres" class="category-content">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">Mujeres Principiantes</span>
+                        <span class="table-badge">7ª Fecha — Sábado 08 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>18</td><td><strong>EMILIA SALAS</strong></td><td>8</td><td>3</td><td class="sub-time">15:42</td><td>3</td><td class="sub-time">15:42</td><td>2</td><td class="sub-time">9:54</td><td class="total-time">41:18.032</td></tr>
+                                <tr><td class="pos-2">2</td><td>176</td><td><strong>FLORENCIA CABRERA</strong></td><td>8</td><td>3</td><td class="sub-time">16:58</td><td>3</td><td class="sub-time">15:54</td><td>2</td><td class="sub-time">10:10</td><td class="total-time">43:02.122</td></tr>
+                                <tr><td class="pos-3">3</td><td>923</td><td><strong>ANTONELLA OXA</strong></td><td>8</td><td>3</td><td class="sub-time">16:15</td><td>3</td><td class="sub-time">16:21</td><td>2</td><td class="sub-time">11:28</td><td class="total-time">44:04.839</td></tr>
+                                <tr><td>4</td><td>785</td><td><strong>SARA GERBAUD</strong></td><td>8</td><td>3</td><td class="sub-time">17:25</td><td>3</td><td class="sub-time">17:35</td><td>2</td><td class="sub-time">10:56</td><td class="total-time">45:56.435</td></tr>
+                                <tr><td>5</td><td>17</td><td><strong>Karolain GONZALEZ</strong></td><td>8</td><td>3</td><td class="sub-time">20:01</td><td>3</td><td class="sub-time">20:44</td><td>2</td><td class="sub-time">12:52</td><td class="total-time">53:37.433</td></tr>
+                                <tr><td>6</td><td>93</td><td><strong>TAMARA BERNALES</strong></td><td>8</td><td>3</td><td class="sub-time">23:53</td><td>3</td><td class="sub-time">20:53</td><td>2</td><td class="sub-time">12:51</td><td class="total-time">57:37.372</td></tr>
+                                <tr><td>7</td><td>150</td><td><strong>BÁRBARA LISET FIGUEROA</strong></td><td>6</td><td>3</td><td class="sub-time">23:17</td><td>3</td><td class="sub-time">20:26</td><td>—</td><td class="sub-time">—</td><td class="total-time">43:43.046</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8ª Fecha — Domingo 09 de Agosto 2026 -->
+        <div id="f8" class="view-group">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchCat('f8', '50cc')">50 CC</button>
+                <button class="tab-btn" onclick="switchCat('f8', '65cc')">65 CC</button>
+                <button class="tab-btn" onclick="switchCat('f8', '85cc')">85 CC</button>
+                <button class="tab-btn" onclick="switchCat('f8', 'mujeres')">Mujeres Principiantes</button>
+            </div>
+
+            <!-- 50 CC -->
+            <div id="f8-50cc" class="category-content active">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">50 CC</span>
+                        <span class="table-badge">8ª Fecha — Domingo 09 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>7</td><td><strong>Renato Vasquez</strong></td><td>9</td><td>3</td><td class="sub-time">14:10.581</td><td>3</td><td class="sub-time">13:32.899</td><td>3</td><td class="sub-time">13:14.854</td><td class="total-time">40:58.334</td></tr>
+                                <tr><td class="pos-2">2</td><td>31</td><td><strong>Benjamin Gallardo</strong></td><td>9</td><td>3</td><td class="sub-time">14:58.891</td><td>3</td><td class="sub-time">14:04.054</td><td>3</td><td class="sub-time">14:17.238</td><td class="total-time">43:20.183</td></tr>
+                                <tr><td class="pos-3">3</td><td>115</td><td><strong>Clemente Donoso</strong></td><td>9</td><td>3</td><td class="sub-time">15:28.532</td><td>3</td><td class="sub-time">14:36.561</td><td>3</td><td class="sub-time">14:12.505</td><td class="total-time">44:17.598</td></tr>
+                                <tr><td>4</td><td>10</td><td><strong>Santiago Sepulveda</strong></td><td>9</td><td>3</td><td class="sub-time">16:54.570</td><td>3</td><td class="sub-time">14:47.856</td><td>3</td><td class="sub-time">16:13.543</td><td class="total-time">47:55.969</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 65 CC -->
+            <div id="f8-65cc" class="category-content">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">65 CC</span>
+                        <span class="table-badge">8ª Fecha — Domingo 09 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>11</td><td><strong>Clemente Lobos</strong></td><td>14</td><td>5</td><td class="sub-time">21:01.034</td><td>5</td><td class="sub-time">20:15.924</td><td>4</td><td class="sub-time">15:59.450</td><td class="total-time">57:16.408</td></tr>
+                                <tr><td class="pos-2">2</td><td>21</td><td><strong>Santiago Veliz</strong></td><td>14</td><td>5</td><td class="sub-time">21:17.990</td><td>5</td><td class="sub-time">20:48.590</td><td>4</td><td class="sub-time">16:15.939</td><td class="total-time">58:22.519</td></tr>
+                                <tr><td class="pos-3">3</td><td>58</td><td><strong>Jorge Valdivia</strong></td><td>14</td><td>5</td><td class="sub-time">22:06.295</td><td>5</td><td class="sub-time">21:31.084</td><td>4</td><td class="sub-time">17:12.623</td><td class="total-time">1:00:50.002</td></tr>
+                                <tr><td>4</td><td>22</td><td><strong>Clemente Busto</strong></td><td>14</td><td>5</td><td class="sub-time">22:39.838</td><td>5</td><td class="sub-time">22:37.911</td><td>4</td><td class="sub-time">18:09.856</td><td class="total-time">1:03:27.605</td></tr>
+                                <tr><td>5</td><td>15</td><td><strong>Martin Calvo</strong></td><td>14</td><td>5</td><td class="sub-time">22:58.400</td><td>5</td><td class="sub-time">22:59.253</td><td>4</td><td class="sub-time">18:29.882</td><td class="total-time">1:04:27.535</td></tr>
+                                <tr><td>6</td><td>213</td><td><strong>Juan Pedro Duran</strong></td><td>14</td><td>5</td><td class="sub-time">25:54.073</td><td>5</td><td class="sub-time">24:20.608</td><td>4</td><td class="sub-time">18:42.771</td><td class="total-time">1:08:57.452</td></tr>
+                                <tr><td>7</td><td>16</td><td><strong>Juan Calvo</strong></td><td>14</td><td>5</td><td class="sub-time">25:33.741</td><td>5</td><td class="sub-time">24:43.355</td><td>4</td><td class="sub-time">18:56.661</td><td class="total-time">1:09:13.757</td></tr>
+                                <tr><td>8</td><td>103</td><td><strong>Jose Tomas Herrera</strong></td><td>14</td><td>5</td><td class="sub-time">26:06.965</td><td>5</td><td class="sub-time">25:18.112</td><td>4</td><td class="sub-time">20:11.139</td><td class="total-time">1:11:36.216</td></tr>
+                                <tr><td>9</td><td>146</td><td><strong>Jose Tomas Miranda</strong></td><td>11</td><td>4</td><td class="sub-time">24:21.335</td><td>4</td><td class="sub-time">22:27.053</td><td>3</td><td class="sub-time">17:10.874</td><td class="total-time">1:03:59.262</td></tr>
+                                <tr><td>10</td><td>35</td><td><strong>Juan Barros</strong></td><td>10</td><td>3</td><td class="sub-time">22:50.580</td><td>4</td><td class="sub-time">22:55.170</td><td>3</td><td class="sub-time">17:33.134</td><td class="total-time">1:03:18.884</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 85 CC -->
+            <div id="f8-85cc" class="category-content">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">85 CC</span>
+                        <span class="table-badge">8ª Fecha — Domingo 09 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>131</td><td><strong>Cristian Oxa</strong></td><td>15</td><td>5</td><td class="sub-time">19:09.187</td><td>5</td><td class="sub-time">18:32.656</td><td>5</td><td class="sub-time">18:26.492</td><td class="total-time">56:08.335</td></tr>
+                                <tr><td class="pos-2">2</td><td>28</td><td><strong>William Gonzalez</strong></td><td>15</td><td>5</td><td class="sub-time">19:13.626</td><td>5</td><td class="sub-time">18:56.513</td><td>5</td><td class="sub-time">18:43.962</td><td class="total-time">56:54.101</td></tr>
+                                <tr><td class="pos-3">3</td><td>341</td><td><strong>Martin Castro</strong></td><td>15</td><td>5</td><td class="sub-time">19:12.077</td><td>5</td><td class="sub-time">19:04.714</td><td>5</td><td class="sub-time">18:56.741</td><td class="total-time">57:13.532</td></tr>
+                                <tr><td>4</td><td>314</td><td><strong>Ezequiel Gomez</strong></td><td>15</td><td>5</td><td class="sub-time">19:52.071</td><td>5</td><td class="sub-time">19:35.226</td><td>5</td><td class="sub-time">19:15.634</td><td class="total-time">58:42.931</td></tr>
+                                <tr><td>5</td><td>125</td><td><strong>Cristobal Donoso</strong></td><td>15</td><td>5</td><td class="sub-time">20:20.725</td><td>5</td><td class="sub-time">19:45.240</td><td>5</td><td class="sub-time">19:24.935</td><td class="total-time">59:30.900</td></tr>
+                                <tr><td>6</td><td>128</td><td><strong>Agustin Torres</strong></td><td>15</td><td>5</td><td class="sub-time">20:42.864</td><td>5</td><td class="sub-time">20:43.688</td><td>5</td><td class="sub-time">20:27.623</td><td class="total-time">1:01:54.175</td></tr>
+                                <tr><td>7</td><td>122</td><td><strong>Vicente Corrales</strong></td><td>15</td><td>5</td><td class="sub-time">22:04.590</td><td>5</td><td class="sub-time">21:11.351</td><td>5</td><td class="sub-time">21:18.738</td><td class="total-time">1:04:34.679</td></tr>
+                                <tr><td>8</td><td>89</td><td><strong>Joaquin Garcia</strong></td><td>9</td><td>3</td><td class="sub-time">19:08.744</td><td>3</td><td class="sub-time">18:45.253</td><td>3</td><td class="sub-time">19:01.249</td><td class="total-time">56:55.246</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mujeres Principiantes -->
+            <div id="f8-mujeres" class="category-content">
+                <div class="table-card">
+                    <div class="table-header">
+                        <span class="table-title">Mujeres Principiantes</span>
+                        <span class="table-badge">8ª Fecha — Domingo 09 de Agosto 2026</span>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pos.</th><th>N°</th><th>Nombre</th><th>Vts. Tot.</th>
+                                    <th>Vts R1</th><th>Tiempo R1</th><th>Vts R2</th><th>Tiempo R2</th><th>Vts R3</th><th>Tiempo R3</th><th>Total Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="pos-1">1</td><td>176</td><td><strong>Florencia Cabrera</strong></td><td>11</td><td>4</td><td class="sub-time">17:32.446</td><td>4</td><td class="sub-time">17:37.935</td><td>3</td><td class="sub-time">13:26.387</td><td class="total-time">48:36.768</td></tr>
+                                <tr><td class="pos-2">2</td><td>23</td><td><strong>Antonella Oxa</strong></td><td>11</td><td>4</td><td class="sub-time">18:16.167</td><td>4</td><td class="sub-time">17:39.951</td><td>3</td><td class="sub-time">12:58.902</td><td class="total-time">48:55.020</td></tr>
+                                <tr><td class="pos-3">3</td><td>18</td><td><strong>Emilia Salas</strong></td><td>11</td><td>4</td><td class="sub-time">18:01.093</td><td>4</td><td class="sub-time">17:51.940</td><td>3</td><td class="sub-time">13:19.141</td><td class="total-time">49:12.174</td></tr>
+                                <tr><td>4</td><td>785</td><td><strong>Sara Gerbaud</strong></td><td>11</td><td>4</td><td class="sub-time">19:20.515</td><td>4</td><td class="sub-time">18:28.147</td><td>3</td><td class="sub-time">13:55.049</td><td class="total-time">51:43.711</td></tr>
+                                <tr><td>5</td><td>17</td><td><strong>Karolain Gonzalez</strong></td><td>11</td><td>4</td><td class="sub-time">22:10.918</td><td>4</td><td class="sub-time">21:31.271</td><td>3</td><td class="sub-time">15:55.713</td><td class="total-time">59:37.902</td></tr>
+                                <tr><td>6</td><td>93</td><td><strong>Tamara Bernales</strong></td><td>11</td><td>4</td><td class="sub-time">22:23.280</td><td>4</td><td class="sub-time">22:15.095</td><td>3</td><td class="sub-time">15:53.863</td><td class="total-time">1:00:32.238</td></tr>
+                                <tr><td>7</td><td>204</td><td><strong>Nicole Yañez</strong></td><td>11</td><td>4</td><td class="sub-time">23:08.735</td><td>4</td><td class="sub-time">22:52.765</td><td>3</td><td class="sub-time">17:35.189</td><td class="total-time">1:03:36.689</td></tr>
+                                <tr><td>8</td><td>148</td><td><strong>Camila Muñoz</strong></td><td>11</td><td>4</td><td class="sub-time">24:47.870</td><td>4</td><td class="sub-time">23:05.691</td><td>3</td><td class="sub-time">17:01.939</td><td class="total-time">1:04:55.500</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /normalTabsContainer -->
+
+    <div class="footer">
+        FMC // FIM CHILE 2026 — JOTAPPE MEDIA CONTROL OPERATIVO
+    </div>
+</div>
+
+<script>
+    const ALL_RECORDS = [{"pos": 1, "num": 17, "nombre": "RENATO VASQUEZ", "clase": "50 cc", "vueltas": 8, "vts_r1": 3, "t_r1": "16:06", "vts_r2": 3, "t_r2": "14:18", "vts_r3": 2, "t_r3": "8:52", "total_t": "39:16.768", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "50 cc"}, {"pos": 2, "num": 115, "nombre": "CLEMENTE DONOSO", "clase": "50 cc", "vueltas": 8, "vts_r1": 3, "t_r1": "17:14", "vts_r2": 3, "t_r2": "15:01", "vts_r3": 2, "t_r3": "9:38", "total_t": "41:53.253", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "50 cc"}, {"pos": 3, "num": 31, "nombre": "BENJAMIN GALLARDO", "clase": "50 cc", "vueltas": 8, "vts_r1": 3, "t_r1": "19:07", "vts_r2": 3, "t_r2": "14:48", "vts_r3": 2, "t_r3": "9:01", "total_t": "42:56.943", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "50 cc"}, {"pos": 4, "num": 10, "nombre": "SANTIAGO SEPULVEDA", "clase": "50 cc", "vueltas": 7, "vts_r1": 3, "t_r1": "23:16", "vts_r2": 2, "t_r2": "11:22", "vts_r3": 2, "t_r3": "9:47", "total_t": "44:25.314", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "50 cc"}, {"pos": 5, "num": 90, "nombre": "SANTIAGO RODRIGUEZ", "clase": "50 cc", "vueltas": 6, "vts_r1": 1, "t_r1": "13:56", "vts_r2": 3, "t_r2": "18:26", "vts_r3": 2, "t_r3": "11:52", "total_t": "44:14.043", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "50 cc"}, {"pos": 6, "num": 41, "nombre": "JOAQUIN CONEJERA", "clase": "50 cc", "vueltas": 3, "vts_r1": 2, "t_r1": "25:43", "vts_r2": 1, "t_r2": "6:31", "vts_r3": "", "t_r3": "", "total_t": "32:34.528", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "50 cc"}, {"pos": 1, "num": 21, "nombre": "SANTIAGO ALONSO VÉLIZ", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "19:26", "vts_r2": 4, "t_r2": "20:18", "vts_r3": 3, "t_r3": "14:28", "total_t": "54:12.528", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 2, "num": 11, "nombre": "CLEMENTE LOBOS", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "21:23", "vts_r2": 4, "t_r2": "20:25", "vts_r3": 3, "t_r3": "14:06", "total_t": "55:54.138", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 3, "num": 58, "nombre": "JORGE VALDIVIA", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "22:08", "vts_r2": 4, "t_r2": "21:08", "vts_r3": 3, "t_r3": "14:32", "total_t": "57:48.425", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 4, "num": 15, "nombre": "MARTÍN CALVO", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "21:09", "vts_r2": 4, "t_r2": "22:00", "vts_r3": 3, "t_r3": "16:48", "total_t": "59:57.943", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 5, "num": 22, "nombre": "CLEMENTE BUSTO", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "21:56", "vts_r2": 4, "t_r2": "22:33", "vts_r3": 3, "t_r3": "15:39", "total_t": "01:00:08.154", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 6, "num": 16, "nombre": "JUAN CALVO", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "24:56", "vts_r2": 4, "t_r2": "26:07", "vts_r3": 3, "t_r3": "16:35", "total_t": "01:07:38.054", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 7, "num": 103, "nombre": "JOSÉ TOMÁS HERRERA", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "26:00", "vts_r2": 4, "t_r2": "24:39", "vts_r3": 3, "t_r3": "17:50", "total_t": "01:08:29.291", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 8, "num": 213, "nombre": "JUAN PEDRO DURAN", "clase": "65 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "25:56", "vts_r2": 4, "t_r2": "27:24", "vts_r3": 3, "t_r3": "17:17", "total_t": "01:10:37.552", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 9, "num": 146, "nombre": "JOSE TOMAS MIRANDA", "clase": "65 cc", "vueltas": 8, "vts_r1": 3, "t_r1": "25:02", "vts_r2": 3, "t_r2": "28:17", "vts_r3": 2, "t_r3": "13:23", "total_t": "01:06:42.023", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "65 cc"}, {"pos": 1, "num": 131, "nombre": "CRISTIAN OXA", "clase": "85 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "18:07", "vts_r2": 4, "t_r2": "17:14", "vts_r3": 3, "t_r3": "12:58", "total_t": "48:19.028", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 2, "num": 28, "nombre": "WILLIAMS GONZALEZ", "clase": "85 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "17:55", "vts_r2": 4, "t_r2": "17:38", "vts_r3": 3, "t_r3": "12:52", "total_t": "48:25.248", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 3, "num": 341, "nombre": "MARTÍN CASTRO", "clase": "85 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "18:23", "vts_r2": 4, "t_r2": "17:55", "vts_r3": 3, "t_r3": "12:43", "total_t": "49:01.932", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 4, "num": 202, "nombre": "MARTIN CABRERA", "clase": "85 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "19:16", "vts_r2": 4, "t_r2": "19:14", "vts_r3": 3, "t_r3": "13:21", "total_t": "51:51.142", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 5, "num": 314, "nombre": "EZEQUIEL GOMEZ", "clase": "85 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "19:49", "vts_r2": 4, "t_r2": "18:55", "vts_r3": 3, "t_r3": "13:14", "total_t": "51:58.032", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 6, "num": 125, "nombre": "CRISTOBAL DONOSO", "clase": "85 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "18:53", "vts_r2": 4, "t_r2": "20:38", "vts_r3": 3, "t_r3": "13:16", "total_t": "52:47.732", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 7, "num": 128, "nombre": "AGUSTÍN TORRES", "clase": "85 cc", "vueltas": 11, "vts_r1": 4, "t_r1": "19:34", "vts_r2": 4, "t_r2": "20:26", "vts_r3": 3, "t_r3": "13:59", "total_t": "53:59.221", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 8, "num": 122, "nombre": "VICENTE CORRALES", "clase": "85 cc", "vueltas": 10, "vts_r1": 4, "t_r1": "20:13", "vts_r2": 3, "t_r2": "20:19", "vts_r3": 3, "t_r3": "14:18", "total_t": "54:50.123", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "85 cc"}, {"pos": 1, "num": 18, "nombre": "EMILIA SALAS", "clase": "Mujeres Principiantes", "vueltas": 8, "vts_r1": 3, "t_r1": "15:42", "vts_r2": 3, "t_r2": "15:42", "vts_r3": 2, "t_r3": "9:54", "total_t": "41:18.032", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "Mujeres Principiantes"}, {"pos": 2, "num": 176, "nombre": "FLORENCIA CABRERA", "clase": "Mujeres Principiantes", "vueltas": 8, "vts_r1": 3, "t_r1": "16:58", "vts_r2": 3, "t_r2": "15:54", "vts_r3": 2, "t_r3": "10:10", "total_t": "43:02.122", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "Mujeres Principiantes"}, {"pos": 3, "num": 923, "nombre": "ANTONELLA OXA", "clase": "Mujeres Principiantes", "vueltas": 8, "vts_r1": 3, "t_r1": "16:15", "vts_r2": 3, "t_r2": "16:21", "vts_r3": 2, "t_r3": "11:28", "total_t": "44:04.839", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "Mujeres Principiantes"}, {"pos": 4, "num": 785, "nombre": "SARA GERBAUD", "clase": "Mujeres Principiantes", "vueltas": 8, "vts_r1": 3, "t_r1": "17:25", "vts_r2": 3, "t_r2": "17:35", "vts_r3": 2, "t_r3": "10:56", "total_t": "45:56.435", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "Mujeres Principiantes"}, {"pos": 5, "num": 17, "nombre": "Karolain GONZALEZ", "clase": "Mujeres Principiantes", "vueltas": 8, "vts_r1": 3, "t_r1": "20:01", "vts_r2": 3, "t_r2": "20:44", "vts_r3": 2, "t_r3": "12:52", "total_t": "53:37.433", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "Mujeres Principiantes"}, {"pos": 6, "num": 93, "nombre": "TAMARA BERNALES", "clase": "Mujeres Principiantes", "vueltas": 8, "vts_r1": 3, "t_r1": "23:53", "vts_r2": 3, "t_r2": "20:53", "vts_r3": 2, "t_r3": "12:51", "total_t": "57:37.372", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "Mujeres Principiantes"}, {"pos": 7, "num": 150, "nombre": "BÁRBARA LISET FIGUEROA", "clase": "Mujeres Principiantes", "vueltas": 6, "vts_r1": 3, "t_r1": "23:17", "vts_r2": 3, "t_r2": "20:26", "vts_r3": "", "t_r3": "", "total_t": "43:43.046", "fecha_label": "7ª Fecha (Sáb 08)", "cat_label": "Mujeres Principiantes"}, {"pos": 1, "num": 7, "nombre": "Renato Vasquez", "clase": "50 CC", "vueltas": 9, "vts_r1": 3, "t_r1": "14:10.581", "vts_r2": 3, "t_r2": "13:32.899", "vts_r3": 3, "t_r3": "13:14.854", "total_t": "40:58.334", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "50 CC"}, {"pos": 2, "num": 31, "nombre": "Benjamin Gallardo", "clase": "50 CC", "vueltas": 9, "vts_r1": 3, "t_r1": "14:58.891", "vts_r2": 3, "t_r2": "14:04.054", "vts_r3": 3, "t_r3": "14:17.238", "total_t": "43:20.183", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "50 CC"}, {"pos": 3, "num": 115, "nombre": "Clemente Donoso", "clase": "50 CC", "vueltas": 9, "vts_r1": 3, "t_r1": "15:28.532", "vts_r2": 3, "t_r2": "14:36.561", "vts_r3": 3, "t_r3": "14:12.505", "total_t": "44:17.598", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "50 CC"}, {"pos": 4, "num": 10, "nombre": "Santiago Sepulveda", "clase": "50 CC", "vueltas": 9, "vts_r1": 3, "t_r1": "16:54.570", "vts_r2": 3, "t_r2": "14:47.856", "vts_r3": 3, "t_r3": "16:13.543", "total_t": "47:55.969", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "50 CC"}, {"pos": 1, "num": 11, "nombre": "Clemente Lobos", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "21:01.034", "vts_r2": 5, "t_r2": "20:15.924", "vts_r3": 4, "t_r3": "15:59.450", "total_t": "57:16.408", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 2, "num": 21, "nombre": "Santiago Veliz", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "21:17.990", "vts_r2": 5, "t_r2": "20:48.590", "vts_r3": 4, "t_r3": "16:15.939", "total_t": "58:22.519", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 3, "num": 58, "nombre": "Jorge Valdivia", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "22:06.295", "vts_r2": 5, "t_r2": "21:31.084", "vts_r3": 4, "t_r3": "17:12.623", "total_t": "1:00:50.002", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 4, "num": 22, "nombre": "Clemente Busto", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "22:39.838", "vts_r2": 5, "t_r2": "22:37.911", "vts_r3": 4, "t_r3": "18:09.856", "total_t": "1:03:27.605", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 5, "num": 15, "nombre": "Martin Calvo", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "22:58.400", "vts_r2": 5, "t_r2": "22:59.253", "vts_r3": 4, "t_r3": "18:29.882", "total_t": "1:04:27.535", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 6, "num": 213, "nombre": "Juan Pedro Duran", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "25:54.073", "vts_r2": 5, "t_r2": "24:20.608", "vts_r3": 4, "t_r3": "18:42.771", "total_t": "1:08:57.452", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 7, "num": 16, "nombre": "Juan Calvo", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "25:33.741", "vts_r2": 5, "t_r2": "24:43.355", "vts_r3": 4, "t_r3": "18:56.661", "total_t": "1:09:13.757", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 8, "num": 103, "nombre": "Jose Tomas Herrera", "clase": "65 CC", "vueltas": 14, "vts_r1": 5, "t_r1": "26:06.965", "vts_r2": 5, "t_r2": "25:18.112", "vts_r3": 4, "t_r3": "20:11.139", "total_t": "1:11:36.216", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 9, "num": 146, "nombre": "Jose Tomas Miranda", "clase": "65 CC", "vueltas": 11, "vts_r1": 4, "t_r1": "24:21.335", "vts_r2": 4, "t_r2": "22:27.053", "vts_r3": 3, "t_r3": "17:10.874", "total_t": "1:03:59.262", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 10, "num": 35, "nombre": "Juan Barros", "clase": "65 CC", "vueltas": 10, "vts_r1": 3, "t_r1": "22:50.580", "vts_r2": 4, "t_r2": "22:55.170", "vts_r3": 3, "t_r3": "17:33.134", "total_t": "1:03:18.884", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "65 CC"}, {"pos": 1, "num": 131, "nombre": "Cristian Oxa", "clase": "85 CC", "vueltas": 15, "vts_r1": 5, "t_r1": "19:09.187", "vts_r2": 5, "t_r2": "18:32.656", "vts_r3": 5, "t_r3": "18:26.492", "total_t": "56:08.335", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 2, "num": 28, "nombre": "William Gonzalez", "clase": "85 CC", "vueltas": 15, "vts_r1": 5, "t_r1": "19:13.626", "vts_r2": 5, "t_r2": "18:56.513", "vts_r3": 5, "t_r3": "18:43.962", "total_t": "56:54.101", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 3, "num": 341, "nombre": "Martin Castro", "clase": "85 CC", "vueltas": 15, "vts_r1": 5, "t_r1": "19:12.077", "vts_r2": 5, "t_r2": "19:04.714", "vts_r3": 5, "t_r3": "18:56.741", "total_t": "57:13.532", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 4, "num": 314, "nombre": "Ezequiel Gomez", "clase": "85 CC", "vueltas": 15, "vts_r1": 5, "t_r1": "19:52.071", "vts_r2": 5, "t_r2": "19:35.226", "vts_r3": 5, "t_r3": "19:15.634", "total_t": "58:42.931", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 5, "num": 125, "nombre": "Cristobal Donoso", "clase": "85 CC", "vueltas": 15, "vts_r1": 5, "t_r1": "20:20.725", "vts_r2": 5, "t_r2": "19:45.240", "vts_r3": 5, "t_r3": "19:24.935", "total_t": "59:30.900", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 6, "num": 128, "nombre": "Agustin Torres", "clase": "85 CC", "vueltas": 15, "vts_r1": 5, "t_r1": "20:42.864", "vts_r2": 5, "t_r2": "20:43.688", "vts_r3": 5, "t_r3": "20:27.623", "total_t": "1:01:54.175", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 7, "num": 122, "nombre": "Vicente Corrales", "clase": "85 CC", "vueltas": 15, "vts_r1": 5, "t_r1": "22:04.590", "vts_r2": 5, "t_r2": "21:11.351", "vts_r3": 5, "t_r3": "21:18.738", "total_t": "1:04:34.679", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 8, "num": 89, "nombre": "Joaquin Garcia", "clase": "85 CC", "vueltas": 9, "vts_r1": 3, "t_r1": "19:08.744", "vts_r2": 3, "t_r2": "18:45.253", "vts_r3": 3, "t_r3": "19:01.249", "total_t": "56:55.246", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "85 CC"}, {"pos": 1, "num": 176, "nombre": "Florencia Cabrera", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "17:32.446", "vts_r2": 4, "t_r2": "17:37.935", "vts_r3": 3, "t_r3": "13:26.387", "total_t": "48:36.768", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}, {"pos": 2, "num": 23, "nombre": "Antonella Oxa", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "18:16.167", "vts_r2": 4, "t_r2": "17:39.951", "vts_r3": 3, "t_r3": "12:58.902", "total_t": "48:55.020", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}, {"pos": 3, "num": 18, "nombre": "Emilia Salas", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "18:01.093", "vts_r2": 4, "t_r2": "17:51.940", "vts_r3": 3, "t_r3": "13:19.141", "total_t": "49:12.174", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}, {"pos": 4, "num": 785, "nombre": "Sara Gerbaud", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "19:20.515", "vts_r2": 4, "t_r2": "18:28.147", "vts_r3": 3, "t_r3": "13:55.049", "total_t": "51:43.711", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}, {"pos": 5, "num": 17, "nombre": "Karolain Gonzalez", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "22:10.918", "vts_r2": 4, "t_r2": "21:31.271", "vts_r3": 3, "t_r3": "15:55.713", "total_t": "59:37.902", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}, {"pos": 6, "num": 93, "nombre": "Tamara Bernales", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "22:23.280", "vts_r2": 4, "t_r2": "22:15.095", "vts_r3": 3, "t_r3": "15:53.863", "total_t": "1:00:32.238", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}, {"pos": 7, "num": 204, "nombre": "Nicole Yañez", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "23:08.735", "vts_r2": 4, "t_r2": "22:52.765", "vts_r3": 3, "t_r3": "17:35.189", "total_t": "1:03:36.689", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}, {"pos": 8, "num": 148, "nombre": "Camila Muñoz", "clase": "Mujeres Principiantes", "vueltas": 11, "vts_r1": 4, "t_r1": "24:47.870", "vts_r2": 4, "t_r2": "23:05.691", "vts_r3": 3, "t_r3": "17:01.939", "total_t": "1:04:55.500", "fecha_label": "8ª Fecha (Dom 09)", "cat_label": "Mujeres Principiantes"}];
+
+    function switchFecha(fechaId) {
+        document.querySelectorAll('.view-group').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.fecha-btn').forEach(el => el.classList.remove('active'));
+        
+        document.getElementById(fechaId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    function switchCat(fechaId, catId) {
+        const parent = document.getElementById(fechaId);
+        parent.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
+        parent.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        
+        document.getElementById(fechaId + '-' + catId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    function cleanStr(str) {
+        if (!str) return '';
+        return str.toString()
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')
+                  .toLowerCase()
+                  .trim();
+    }
+
+    function filterPilotosGlobal() {
+        const rawInput = document.getElementById('searchInput').value;
+        const queryClean = cleanStr(rawInput);
+        const globalResultsDiv = document.getElementById('globalSearchResults');
+        const normalTabsDiv = document.getElementById('normalTabsContainer');
+        const tbody = document.getElementById('globalSearchResultsBody');
+        const badge = document.getElementById('searchCountBadge');
+        const noResults = document.getElementById('noGlobalResults');
+
+        if (queryClean === '') {
+            globalResultsDiv.style.display = 'none';
+            normalTabsDiv.style.display = 'block';
+            return;
+        }
+
+        normalTabsDiv.style.display = 'none';
+        globalResultsDiv.style.display = 'block';
+
+        tbody.innerHTML = '';
+
+        const qTokens = queryClean.split(/\s+/).filter(t => t.length > 0);
+        const generalTerms = ['sabado', 'domingo', '08', '09', 'f7', 'f8', '50cc', '65cc', '85cc', 'mujeres'];
+        const isGeneralFilter = qTokens.some(tok => generalTerms.includes(tok));
+
+        const directMatches = [];
+        const matchedNames = new Set();
+
+        ALL_RECORDS.forEach(rec => {
+            const fechaAlt = (rec.fecha_label.includes('7ª')) ? '7a fecha sabado 08 agosto sab' : '8a fecha domingo 09 agosto dom';
+            const catAlt = rec.cat_label.replace(/\s+/g, '');
+            const searchableBlob = cleanStr(
+                rec.nombre + ' ' + rec.num + ' ' + rec.cat_label + ' ' + catAlt + ' ' + rec.clase + ' ' + rec.fecha_label + ' ' + fechaAlt + ' pos ' + rec.pos
+            );
+
+            const isMatch = qTokens.every(token => searchableBlob.includes(token));
+
+            if (isMatch) {
+                directMatches.push(rec);
+                matchedNames.add(cleanStr(rec.nombre));
+            }
+        });
+
+        let matchCount = 0;
+        const seenKeys = new Set();
+
+        ALL_RECORDS.forEach(rec => {
+            const recKey = rec.fecha_label + '|' + rec.cat_label + '|' + rec.num + '|' + rec.nombre;
+            const recCleanName = cleanStr(rec.nombre);
+
+            const isDirect = directMatches.includes(rec);
+            const isRiderExpansion = !isGeneralFilter && matchedNames.has(recCleanName);
+
+            if ((isDirect || isRiderExpansion) && !seenKeys.has(recKey)) {
+                seenKeys.add(recKey);
+                matchCount++;
+
+                const tr = document.createElement('tr');
+                
+                let posCls = '';
+                if (rec.pos === 1) posCls = ' class="pos-1"';
+                else if (rec.pos === 2) posCls = ' class="pos-2"';
+                else if (rec.pos === 3) posCls = ' class="pos-3"';
+
+                const t1 = rec.t_r1 || '—';
+                const t2 = rec.t_r2 || '—';
+                const t3 = rec.t_r3 || '—';
+                const v1 = (rec.vts_r1 !== '') ? rec.vts_r1 : '—';
+                const v2 = (rec.vts_r2 !== '') ? rec.vts_r2 : '—';
+                const v3 = (rec.vts_r3 !== '') ? rec.vts_r3 : '—';
+
+                tr.innerHTML = `
+                    <td><span class="badge-fecha">${rec.fecha_label}</span></td>
+                    <td><span class="badge-cat">${rec.cat_label}</span></td>
+                    <td${posCls}>${rec.pos}</td>
+                    <td>${rec.num}</td>
+                    <td><strong>${rec.nombre}</strong></td>
+                    <td>${rec.vueltas}</td>
+                    <td>${v1}</td><td class="sub-time">${t1}</td>
+                    <td>${v2}</td><td class="sub-time">${t2}</td>
+                    <td>${v3}</td><td class="sub-time">${t3}</td>
+                    <td class="total-time">${rec.total_t}</td>
+                `;
+                tbody.appendChild(tr);
+            }
+        });
+
+        badge.textContent = matchCount + ' ' + (matchCount === 1 ? 'coincidencia' : 'coincidencias');
+        noResults.style.display = (matchCount === 0) ? 'block' : 'none';
+    }
+</script>
+
+</body>
+</html>

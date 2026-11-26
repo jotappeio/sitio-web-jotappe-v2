@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FG9R1TWNW9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FG9R1TWNW9');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometraje Deportivo | Jotappe</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --accent: #8fbc8f; --bg-dark: #050505; --text-main: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg-dark); font-family: 'Inter', sans-serif; color: var(--text-main); line-height: 1.6; }
+        
+        .main-wrapper { 
+            position: relative; z-index: 1; width: 100%; min-height: 100vh; 
+            display: flex; flex-direction: column; align-items: center; 
+            background: radial-gradient(circle, rgba(5,5,5,0.8) 0%, rgba(5,5,5,0.95) 100%); 
+            padding: 30px 20px; 
+        }
+
+        header { width: 100%; max-width: 1100px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
+        
+        .logo-box { 
+            width: 60px; height: 60px; background: #111; border-radius: 12px; 
+            display: flex; align-items: center; justify-content: center; 
+            font-weight: 900; font-size: 36px; color: var(--accent); 
+            border: 1px solid rgba(143, 188, 143, 0.4); text-decoration: none;
+        }
+
+        .main-nav { display: flex; gap: 25px; }
+        .nav-link { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-link:hover { color: var(--accent); }
+        .nav-link.active { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
+
+        /* Banner de Evolución */
+        .dev-banner {
+            width: 100%; max-width: 1100px;
+            background: rgba(143, 188, 143, 0.03);
+            border: 1px dashed rgba(143, 188, 143, 0.3);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .dev-icon { width: 32px; height: 32px; fill: var(--accent); opacity: 0.8; flex-shrink: 0; animation: spin 8s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .dev-badge { background: var(--accent); color: #000; font-size: 0.65rem; font-weight: 900; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; }
+        .dev-content { display: flex; flex-direction: column; gap: 4px; }
+        .dev-text { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+        .dev-text b { color: var(--accent); }
+
+        .section-label { font-size: 1rem; text-transform: uppercase; letter-spacing: 6px; color: #ffffff; margin: 40px 0 50px; text-align: center; width: 100%; max-width: 1100px; display: flex; align-items: center; justify-content: center; gap: 25px; font-weight: 800; }
+        .section-label::before, .section-label::after { content: ""; flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent); }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; width: 100%; max-width: 1100px; }
+        
+        .service-card { background: rgba(15, 15, 15, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); padding: 45px; border-radius: 24px; backdrop-filter: blur(15px); transition: 0.4s; height: 100%; }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-5px); background: rgba(20, 20, 20, 0.95); }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; display: flex; align-items: center; gap: 12px; }
+        .accent-line { width: 5px; height: 25px; background: var(--accent); border-radius: 3px; }
+
+        .card-placeholder { border: 1px dashed rgba(255,255,255,0.15); background: rgba(255,255,255,0.02); opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header>
+            <a href="index.html" class="logo-box">J</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">INICIO</a>
+                <a href="cronometraje-deportivo.html" class="nav-link active">CRONOMETRAJE DEPORTIVO</a>
+            </nav>
+        </header>
+
+        <section style="text-align: center; max-width: 800px; margin-bottom: 40px;">
+            <h1 style="font-size: 3rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 5px;">CDT TIMING</h1>
+            <p style="color: #888; font-size: 1.1rem; margin-bottom: 30px;">Plataforma de resultados para competencias deportivas</p>
+        </section>
+
+        <div class="dev-banner">
+            <svg class="dev-icon" viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.47,5.32 14.87,5.07L14.49,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.51,2.42L9.13,5.07C8.53,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.04 4.95,18.95L7.44,17.95C7.96,18.34 8.53,18.68 9.13,18.93L9.51,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.49,21.58L14.87,18.93C15.47,18.68 16.04,18.34 16.56,17.95L19.05,18.95C19.27,19.04 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" /></svg>
+            <div class="dev-content">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div class="dev-badge">v1.0 Alpha</div>
+                    <span style="font-size: 0.7rem; color: var(--accent); font-weight: 800; text-transform: uppercase;">MODO DE DESARROLLO</span>
+                </div>
+                <p class="dev-text">
+                    <b>PLATAFORMA EN EVOLUCIÓN:</b> Optimizando lógica de procesamiento masivo. 
+                    Estamos integrando estándares de cronometraje de élite para el territorio.
+                </p>
+            </div>
+        </div>
+
+        <span class="section-label">Competencias 2025</span>
+
+        <div class="services-grid">
+            
+            <a href="cronometraje/cochrane-patagonia-trail-2025/index.html" style="text-decoration: none; display: block;">
+                <article class="service-card">
+                    <h3><span class="accent-line"></span>Cochrane Patagonia Trail 2025</h3>
+                    <p style="color: var(--accent); font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 15px;">Cochrane, Región de Aysén - Chile</p>
+                    <p style="color: #bbb; margin-bottom: 25px;">Resultados oficiales y clasificación por categorías con exclusión élite.</p>
+                    <div style="color: var(--accent); font-weight: 800; font-size: 0.8rem; display: flex; align-items: center; gap: 10px;">
+                        VER RESULTADOS <span style="font-size: 1.2rem;">→</span>
+                    </div>
+                </article>
+            </a>
+
+            <div style="cursor: default;">
+                <article class="service-card card-placeholder">
+                    <h3 style="color: #777;"><span class="accent-line" style="background: #444;"></span>Próximo Evento</h3>
+                    <p style="color: #555; font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 15px;">EN PREPARACIÓN</p>
+                    <p style="color: #666;">Configurando nuestra estructura de cronometraje para nuevos desafíos outdoor.</p>
+                </article>
+            </div>
+
+        </div>
+
+        <footer style="margin-top: 100px; color: #444; font-size: 0.8rem; text-align: center;">
+            ©2026 Jotappe - Ingeniería para el Deporte
+        </footer>
+    </div>
+</body>
+</html>

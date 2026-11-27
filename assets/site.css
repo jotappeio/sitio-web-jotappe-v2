@@ -164,3 +164,7 @@ h2 em{color:#b5c7b3}
 /* Vodudahue: respetar encuadre vertical original, sin recortar a la persona */
 .field-note:nth-child(2) img{object-fit:contain;background:#172722}
 @media(max-width:540px){.field-note:nth-child(2) img{height:105px;min-height:0;object-fit:contain}}
+
+/* Corrección definitiva del encuadre de Vodudahue: priorizar al sujeto situado abajo. */
+.field-note:nth-child(2) img{object-fit:cover;object-position:center bottom}
+@media(max-width:540px){.field-note:nth-child(2) img{height:115px;min-height:115px;object-fit:cover;object-position:center bottom}}

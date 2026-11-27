@@ -160,3 +160,7 @@ h2 em{color:#b5c7b3}
 .field-note:nth-child(3){border-top:2px solid var(--territory-leaf)}
 @media(max-width:760px){.field-notes{gap:10px}.field-note img{height:120px}.field-note figcaption{padding:12px}}
 @media(max-width:540px){.field-notes{grid-template-columns:1fr;gap:10px}.field-note{display:grid;grid-template-columns:115px minmax(0,1fr);align-items:center}.field-note img{height:100%;min-height:105px;object-fit:cover}.field-note figcaption{padding:10px 13px}.field-note strong{font-size:.84rem}.field-note span{font-size:.76rem}}
+
+/* Vodudahue: respetar encuadre vertical original, sin recortar a la persona */
+.field-note:nth-child(2) img{object-fit:contain;background:#172722}
+@media(max-width:540px){.field-note:nth-child(2) img{height:105px;min-height:0;object-fit:contain}}

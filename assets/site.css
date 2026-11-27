@@ -56,3 +56,58 @@ h2 em{color:#b5c7b3}
 .project-card-portrait .project-photo::before{content:"";position:absolute;inset:-22px;background:linear-gradient(rgba(12,27,25,.56),rgba(12,27,25,.56)),url('../assets/jotappe_evento_nocturno_aprobada.webp') center center/cover no-repeat;filter:blur(17px);z-index:-1}
 .project-card-portrait .project-photo img{position:relative;z-index:1;width:auto;max-width:100%;height:100%;object-fit:contain;filter:none}
 @media(max-width:540px){.project-card-portrait .project-photo{height:355px}}
+
+
+/* v2.3 — escala editorial más compacta, sin alterar la identidad visual */
+@media(min-width:761px){
+  .section{padding-block:82px}
+  .profile{gap:65px}
+  .profile-body{padding-top:24px}
+  .section-heading{margin-bottom:32px}
+  .section-heading h2{margin-top:14px}
+  .section-heading h2,.section-side h2{font-size:clamp(2.45rem,4.2vw,3.75rem)}
+  .bento{grid-template-rows:170px 170px;gap:12px}
+  .area-card{padding:22px 26px}
+  .area-primary{padding:27px 32px}
+  .area-card h3{font-size:clamp(1.95rem,2.7vw,2.8rem);margin-bottom:9px}
+  .area-card p{font-size:.87rem;line-height:1.55}
+  .experience-list article{padding-block:23px}
+  .project-photo img{height:240px}
+  .project-card-portrait .project-photo{height:270px}
+  .project-copy{padding:23px 26px 26px}
+  .project-copy h3{font-size:1.7rem;margin:13px 0}
+  .education-grid{margin-top:30px}
+  .contact-section{padding-block:80px}
+}
+@media(min-width:541px) and (max-width:760px){
+  .section{padding-block:65px}
+  .bento{grid-template-rows:170px 170px}
+  .area-card{padding:22px}
+  .area-primary{padding:28px}
+  .area-card h3{font-size:2.25rem}
+}
+@media(max-width:540px){
+  .section{padding-block:48px}
+  .section-heading{margin-bottom:25px}
+  .section-heading h2,.section-side h2{font-size:clamp(2.15rem,9vw,2.8rem);margin-top:12px}
+  .section-heading>p{margin-top:13px}
+  .profile{gap:12px}
+  .profile-body p{margin-bottom:14px}
+  .bento{gap:10px}
+  .area-card,.area-primary{min-height:0;padding:20px 22px;gap:20px}
+  .area-card h3{font-size:2.05rem;margin-bottom:7px}
+  .area-card p{font-size:.86rem;line-height:1.52}
+  .area-top{font-size:.7rem}
+  .experience-list article{padding-block:18px}
+  .project-photo img{height:210px}
+  .project-card-portrait .project-photo{height:260px}
+  .project-copy{padding:20px 22px}
+  .project-copy h3{font-size:1.65rem;margin:11px 0}
+  .project-copy p{font-size:.87rem}
+  .project-foot{margin-top:16px;padding-top:13px}
+  .education-grid{margin-top:25px;gap:22px}
+  .education-note{margin-top:25px}
+  .contact-section{padding-block:55px}
+  .contact-inner h2{font-size:clamp(2.15rem,9vw,2.7rem)}
+  .contact-links{margin-top:25px}
+}

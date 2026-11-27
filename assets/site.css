@@ -111,3 +111,38 @@ h2 em{color:#b5c7b3}
   .contact-inner h2{font-size:clamp(2.15rem,9vw,2.7rem)}
   .contact-links{margin-top:25px}
 }
+
+
+/* v2.4 — acentos territoriales: tierra, agua, roca y vegetación.
+   Mantener el fondo oscuro y la jerarquía editorial existentes. */
+:root{
+  --territory-earth:#b99a77;
+  --territory-ochre:#d3b575;
+  --territory-water:#8eafb5;
+  --territory-stone:#aab0ab;
+  --territory-leaf:#a7c1a9;
+}
+.hero h1 i{color:#c0cbb4}
+.hero .eyebrow{color:#d3b575}
+.hero .rule{background:#d3b575}
+.wordmark span{color:var(--territory-ochre)}
+.intro-strip span:first-child{color:var(--territory-earth)}
+.areas-section .section-index{color:var(--territory-ochre)}
+.area-primary{background:#344a3e;border-top:3px solid var(--territory-leaf)}
+.area-secondary{background:#3a3931;border-top:3px solid var(--territory-earth)}
+.area-tertiary{background:#253b42;border-top:3px solid var(--territory-water)}
+.area-card h3{color:#f1f1e8}
+.area-card .area-top{color:#d2d7cb}
+.experience-list article:nth-child(3n+1) .tag{border-color:#806e56;color:#d4b98d}
+.experience-list article:nth-child(3n+2) .tag{border-color:#54757b;color:#b3d0d5}
+.experience-list article:nth-child(3n) .tag{border-color:#718078;color:#c7d0c9}
+.project-card:first-child{border-top:3px solid var(--territory-earth)}
+.project-card:nth-child(2){border-top:3px solid var(--territory-water)}
+.education-item:nth-child(1){border-color:var(--territory-water)}
+.education-item:nth-child(2){border-color:var(--territory-ochre)}
+.education-item:nth-child(3){border-color:var(--territory-leaf)}
+.contact-section{background:#263a38}
+.contact-links a{border-color:var(--territory-ochre)}
+@media(max-width:540px){
+  .area-primary,.area-secondary,.area-tertiary{border-top-width:2px}
+}
